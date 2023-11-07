@@ -66,6 +66,17 @@ return require('packer').startup(function(use)
         }
         end
     }
+    use {                                                           -- 注释插件
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+    use {                                                           -- 最顶端显示 tab 
+        'akinsho/bufferline.nvim', 
+        tag = "*", 
+        requires = 'nvim-tree/nvim-web-devicons'
+    } 
 
     if packer_bootstrap then
         require('packer').sync()
