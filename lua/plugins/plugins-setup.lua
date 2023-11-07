@@ -41,6 +41,7 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim', tag = '0.1.4', 			-- 文件检索
         requires = {{'nvim-lua/plenary.nvim'}}
     }
+
     use {'neoclide/coc.nvim', branch = 'release'}
     use {'ethanholz/nvim-lastplace'}                                -- 自动记忆上次文件编辑位置
     use({                                                           -- 替换括号等: 例如 'cs({' 将小括号替换为大括号
@@ -56,7 +57,15 @@ return require('packer').startup(function(use)
         'folke/noice.nvim',                                         -- 弹窗插件
         requires = {'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify'}
     }
-
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+            require("which-key").setup {
+        }
+        end
+    }
 
     if packer_bootstrap then
         require('packer').sync()
