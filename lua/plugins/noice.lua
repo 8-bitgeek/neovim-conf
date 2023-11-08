@@ -17,17 +17,9 @@ require("noice").setup({
     },
     routes = {                              -- hide written message
         {
-            filter = {
-                event = "msg_show",
-                kind = "",
-                find = "written",
-            },
-            opts = { skip = true },
-        },
-        {
             view = "notify",
-            filter = { event = "msg_showmode" },
+            filter = { event = "msg_showmode" },    -- 关闭 mode(Insert/Normal/Visual) 显示
+            opts = { skip = true }
         }
     },
-
 })
