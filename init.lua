@@ -9,6 +9,7 @@ require("plugins.nvim-lastplace")
 require("plugins.noice")
 require("plugins.bufferline")
 require("plugins.tokyonight")
+require("plugins.gitsigns")
 
 -- 引用 lua/core/options.lua 配置文件
 require("core.options")

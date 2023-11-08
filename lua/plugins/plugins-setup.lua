@@ -73,10 +73,13 @@ return require('packer').startup(function(use)
         end
     }
     use {                                                           -- 最顶端显示 tab 
-        'akinsho/bufferline.nvim', 
+        'akinsho/bufferline.nvim',
         tag = "*", 
         requires = 'nvim-tree/nvim-web-devicons'
     } 
+    use {
+        'lewis6991/gitsigns.nvim',
+    }
 
     if packer_bootstrap then
         require('packer').sync()
