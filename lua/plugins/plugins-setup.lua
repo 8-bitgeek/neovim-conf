@@ -61,7 +61,7 @@ return require('packer').startup(function(use)
         "folke/which-key.nvim",
         config = function()
             vim.o.timeout = true
-            vim.o.timeoutlen = 300
+            vim.o.timeoutlen = 500
             require("which-key").setup {
         }
         end
@@ -74,11 +74,15 @@ return require('packer').startup(function(use)
     }
     use {                                                           -- 最顶端显示 tab 
         'akinsho/bufferline.nvim',
-        tag = "*", 
+        tag = "*",
         requires = 'nvim-tree/nvim-web-devicons'
-    } 
-    use {
+    }
+    use {                                                           -- git status 显示
         'lewis6991/gitsigns.nvim',
+    }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end  -- 自动补全括号/引号等
     }
 
     if packer_bootstrap then
