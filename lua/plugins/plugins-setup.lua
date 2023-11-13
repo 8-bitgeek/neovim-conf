@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
         requires = {{'nvim-lua/plenary.nvim'}}
     }
 
-    use {'neoclide/coc.nvim', branch = 'release'}
+    -- use {'neoclide/coc.nvim', branch = 'release'}
     use {'ethanholz/nvim-lastplace'}                                -- 自动记忆上次文件编辑位置
     use({                                                           -- 替换括号等: 例如 'cs({' 将小括号替换为大括号
         "kylechui/nvim-surround",
@@ -80,10 +80,26 @@ return require('packer').startup(function(use)
     use {                                                           -- git status 显示
         'lewis6991/gitsigns.nvim',
     }
+    use({                                                           -- markdown
+       "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+    -- --------------------- 自动补全相关插件 --------------------
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end  -- 自动补全括号/引号等
     }
+    use {                                                           -- lsp 插件管理工具
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig"
+    }
+    use {"hrsh7th/cmp-nvim-lsp"}
+    use {"hrsh7th/cmp-buffer"}
+    use {"hrsh7th/cmp-path"}
+    use {"hrsh7th/cmp-cmdline"}
+    use {"hrsh7th/nvim-cmp"}
+    use {"L3MON4D3/LuaSnip"}
 
     if packer_bootstrap then
         require('packer').sync()
