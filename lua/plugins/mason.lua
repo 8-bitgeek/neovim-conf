@@ -10,6 +10,6 @@ require("mason").setup{
 
 require("mason-lspconfig").setup{
     ensure_installed = {                -- 确保要安装的 lsp 插件
-        "clangd", "lua_ls"
+        "clangd", "lua_ls", "pylsp", "pyright"
     }
 }
