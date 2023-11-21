@@ -31,3 +31,5 @@ keymap.set("n", "<C-l>", "<C-w>l")
 -- tab 跳转
 keymap.set("n", "<leader>h", ":BufferLineCyclePrev<CR>")        -- 切换到上一个标签页
 keymap.set("n", "<leader>l", ":BufferLineCycleNext<CR>")        -- 切换到下一个标签页
+-- wrap 自动折行
+keymap.set("n", "<leader>w", ":set wrap<CR>")                   -- i 表示插入模式下，jj 表示用 jj 来替换 ESC 键
