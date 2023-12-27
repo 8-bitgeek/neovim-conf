@@ -23,6 +23,8 @@ keymap.set("n", "<leader>so", "<C-w>o")                     -- 关闭其它窗�
 keymap.set("n", "<leader>t", ":sp | terminal<CR>")          -- 下方打开 terminal
 keymap.set("n", "<leader>vt", ":vsp | terminal<CR>")        -- 右侧打开 terminal
 keymap.set("n", "<leader>bc", ":tabclose<CR>")              -- 关闭当前 buffer
+keymap.set("n", "<leader>w", ":set wrap<CR>")               -- 自动换行
+keymap.set("n", "<leader>nw", ":set nowrap<CR>")            -- 关闭自动换行
 -- 窗口跳转 --
 keymap.set("n", "<C-h>", "<C-w>h")
 keymap.set("n", "<C-j>", "<C-w>j")
@@ -31,5 +33,3 @@ keymap.set("n", "<C-l>", "<C-w>l")
 -- tab 跳转
 keymap.set("n", "<leader>h", ":BufferLineCyclePrev<CR>")        -- 切换到上一个标签页
 keymap.set("n", "<leader>l", ":BufferLineCycleNext<CR>")        -- 切换到下一个标签页
--- wrap 自动折行
-keymap.set("n", "<leader>w", ":set wrap<CR>")                   -- i 表示插入模式下，jj 表示用 jj 来替换 ESC 键
